@@ -9,6 +9,11 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Mr. Tailor Deprecated Features is a new plugin coming with the theme offering a fallback for old features that are no longer used.
 
+Templates:
+- Page With Slider
+- Page With Slider Full Width
+- Contact Page
+
 == Changelog ==
 
 = 1.0 =

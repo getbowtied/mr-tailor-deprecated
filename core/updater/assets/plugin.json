@@ -12,7 +12,7 @@
 	"author_homepage": "https://getbowtied.com/",
 
 	"sections": {
-		"description": "<p>Mr. Tailor Deprecated Features is a new plugin coming with the theme offering a fallback for old features that are no longer used.</p>",
+		"description": "<p>Mr. Tailor Deprecated Features is a new plugin coming with the theme offering a fallback for old features that are no longer used.</p><h4>Templates:</h4><ul><li>Page With Slider</li><li>Page With Slider Full Width</li><li>Contact Page</li></ul>",
 		"changelog": "<h4>1.0</h4><ul><li>Initial Version</li></ul>"
 	},
 	
