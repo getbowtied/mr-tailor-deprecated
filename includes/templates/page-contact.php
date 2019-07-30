@@ -29,7 +29,7 @@ Template Name: Contact Page
 			$map_style_id = $map_metabox->get_the_value('style');
 		}
 		
-		include_once get_template_directory() . '/templates/map/' . $map_style_id . '.php';
+		include_once dirname(__FILE__) . '/map/' . $map_style_id . '.php';
 		
 		?>
         
@@ -62,7 +62,7 @@ Template Name: Contact Page
         map.setMapTypeId('<?php echo esc_html($map_style_id); ?>');
         
 		var markerImage = {
-			url: '<?php echo get_template_directory_uri(); ?>/images/pinpoint.png',
+			url: '<?php echo dirname(__FILE__); ?>/images/pinpoint.png',
 			scaledSize: new google.maps.Size(50, 60)
 		},
 		

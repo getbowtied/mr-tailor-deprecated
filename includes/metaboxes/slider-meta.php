@@ -12,16 +12,16 @@
     <p>
     	<strong>Slider Template</strong><br /><br />
         <input type="radio" id="style_1" name="<?php $mb->the_name(); ?>" value="style_1" class="input-hidden" <?php if ($mb->is_value('style_1') || $mb->is_value('')) {?>checked="checked" <?php } ?>/>
-        <label for="style_1"><img src="<?php echo get_template_directory_uri() . '/images/metaboxes/style_1.png'; ?>" alt="style-1" /></label>
+        <label for="style_1"><img src="<?php echo plugins_url( '/assets/images/style_1.png', __FILE__ ); ?>" alt="style-1" /></label>
 
         <input type="radio" id="style_3" name="<?php $mb->the_name(); ?>" value="style_3" class="input-hidden" <?php if ($mb->is_value('style_3')) {?>checked="checked" <?php } ?>/>
-        <label for="style_3" id="style_3_label"><img src="<?php echo get_template_directory_uri() . '/images/metaboxes/style_3.png'; ?>" alt="style-2" /></label>
+        <label for="style_3" id="style_3_label"><img src="<?php echo plugins_url( '/assets/images/style_3.png', __FILE__ ); ?>" alt="style-2" /></label>
         
         <input type="radio" id="style_4" name="<?php $mb->the_name(); ?>" value="style_4" class="input-hidden" <?php if ($mb->is_value('style_4')) { ?>checked="checked"<?php } ?>/>
-        <label for="style_4"><img src="<?php echo get_template_directory_uri() . '/images/metaboxes/style_4.png'; ?>" alt="style-3" /></label>
+        <label for="style_4"><img src="<?php echo plugins_url( '/assets/images/style_4.png', __FILE__ ); ?>" alt="style-3" /></label>
         
         <input type="radio" id="style_6" name="<?php $mb->the_name(); ?>" value="style_6" class="input-hidden" <?php if ($mb->is_value('style_6') || $mb->is_value('')) { ?>checked="checked" <?php } ?>/>
-        <label for="style_6"><img src="<?php echo get_template_directory_uri() . '/images/metaboxes/style_6.png'; ?>" alt="style-4" /></label>
+        <label for="style_6"><img src="<?php echo plugins_url( '/assets/images/style_6.png', __FILE__ ); ?>" alt="style-4" /></label>
     </p>
     
     <?php if ($mb->is_value('style_3')) { ?><style>.slider_height {display:block}</style><?php } ?>
