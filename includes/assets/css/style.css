@@ -1,0 +1,150 @@
+.main-slider {
+	overflow:hidden;
+	display:block;
+	margin:0 -30px;
+	padding:0;
+	list-style:none;
+	cursor: move;
+	cursor: -webkit-grab;
+	cursor: -moz-grab;
+}
+
+.main-slider .swiper-container {
+	visibility:hidden;
+	width: 100%;
+	color: #fff;
+	text-align: center;
+}
+
+.main-slider .swiper-slide {
+	padding:0;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center;
+	text-align:center;
+	position:relative;
+	display: table;
+	width: 100%;
+	min-height: 300px;
+}
+
+.main-slider .swiper-slide.no_parallax {
+	background-position:center !important;
+}
+
+.main-slider-content {
+	margin:0 auto;
+	padding:40px 15px 60px 15px;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	width:100%;
+	background: rgba(0, 0, 0, 0);
+}
+
+.main-slider h1 {
+	font-size:13px;
+	text-transform:uppercase;
+	color:#fff;
+	margin:0 0 24px 0;
+	line-height:1.8em;
+}
+
+.main-slider h1:after {
+	content:"";
+	display:block;
+	margin:0 auto;
+	width:70px;
+	height:2px;
+	background:#fff;
+	margin-top:24px;
+}
+
+.main-slider h2 {
+	color:#fff;
+	margin:0 0 25px 0;
+}
+
+.main-slider a.slider_button {
+	font-size: 13px;
+	font-weight: bold;
+	color:#000;
+	text-transform:uppercase;
+	background:#fff;
+	padding: 20px 40px;
+	display:inline-block;
+	line-height:1.5em;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+	transition-property: color, background;
+}
+
+.main-slider a.slider_button:hover {
+	color:#fff;
+	background:#000;
+}
+
+.main-slider .pagination {
+	position: absolute;
+	z-index: 20;
+	left: 0px;
+	bottom: 15px;
+	text-align:center;
+	width:100%;
+}
+
+.main-slider .swiper-pagination-switch {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 20px;
+	background: #222;
+	margin:0 3px;
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+.main-slider .swiper-visible-switch {
+	background: #aaa;
+}
+
+.main-slider .swiper-active-switch {
+	background: #fff;
+}
+
+.main-slider .arrow-left,
+.main-slider .arrow-right
+{
+	display: none;
+	position: absolute;
+	opacity: 0.3;
+	width: 64px;
+	height: 64px;
+	top: 50%;
+	margin-top: -32px;
+	transition: all .3s;
+	-webkit-transition: all .3s;
+}
+
+.main-slider .arrow-left
+{
+	left:30px;
+}
+
+.main-slider .arrow-right
+{
+	right:30px;
+}
+
+.main-slider .arrow-left:hover,
+.main-slider .arrow-right:hover
+{
+	opacity:1;
+}
+
+.main-slider .arrow-left.hidden,
+.main-slider .arrow-right.hidden
+{
+	display:none;
+}

@@ -11,16 +11,16 @@
 </style>
 
 <ul class="main-slider">
-        
+
         <?php
         $slide_counter = 0;
         while($slider_metabox->have_fields('items'))
         {
             $slide_counter++;
         ?>
-            
+
             <li class="swiper-slide slide_<?php echo esc_attr($slide_counter); ?>">
-                
+
                 <div class="main-slider-content">
                     <div class="row">
                         <div class="large-8 large-centered columns">
@@ -32,41 +32,30 @@
                             	<?php } ?>
                             </div><!-- .main-slider-elements -->
                         </div><!-- .columns -->
-                    </div><!-- .row --> 
-                </div>		              
-            
+                    </div><!-- .row -->
+                </div>
+
             </li>
-            
+
         <?php
-        }	
-        ?>          
+        }
+        ?>
 
 </ul>
 
 <script>
 jQuery(document).ready(function($) {
-	
+
 	function resize_slider_content() {
 		//if ($(window).innerWidth() > 640) {
 			$('.main-slider .main-slider-content').css('height', $(window).innerHeight());
 			$('.main-slider').css('visibility', 'visible');
-			$('.slide_1 .main-slider-elements').addClass('animated');
+			// $('.slide_1 .main-slider-elements').addClass('animated');
 		//}
 	}
-	
+
 	resize_slider_content();
-	
-	$(".main-slider").snapscroll();
-	
-	$(window).resize(function(){		
-		resize_slider_content();
-	});
-	
-	$(window).scroll(function() {
-		setTimeout(function() {	
-			$('.ss-active .main-slider-elements').addClass('animated');
-		}, 100);
-	});
-	
+
+
 });
 </script>
