@@ -37,9 +37,6 @@ $theme = wp_get_theme();
 
 if ( $theme->template == 'mrtailor') {
 
-	//Include metaboxes
-	//define('_TEMPLATEURL', WP_CONTENT_URL . '/themes/' . basename(TEMPLATEPATH));
-
 	include_once( dirname(__FILE__) . '/includes/wpalchemy/MetaBox-mod.php' );
 	include_once( dirname(__FILE__) . '/includes/wpalchemy/MediaAccess-mod.php' );
 
