@@ -18,13 +18,13 @@ class TR_Deprecated_Templates {
     protected $templates;
 
     /**
-	 * Returns an instance of this class. 
+	 * Returns an instance of this class.
 	 */
     public static function get_instance() {
 
 		if( null == self::$instance ) {
 			self::$instance = new TR_Deprecated_Templates();
-		} 
+		}
 
 		return self::$instance;
 
@@ -55,17 +55,20 @@ class TR_Deprecated_Templates {
 
 		}
 
+		// Add a deprecated template notification to admin
+		add_action( 'admin_notices', array( $this, 'add_template_deprecated_notification' ) );
+
 		// Add a filter to the save post to inject out template into the page cache
 		add_filter(
-			'wp_insert_post_data', 
-			array( $this, 'register_project_templates' ) 
+			'wp_insert_post_data',
+			array( $this, 'register_project_templates' )
 		);
 
-		// Add a filter to the template include to determine if the page has our 
+		// Add a filter to the template include to determine if the page has our
 		// template assigned and return it's path
 		add_filter(
-			'template_include', 
-			array( $this, 'view_project_template') 
+			'template_include',
+			array( $this, 'view_project_template')
 		);
 
 		// Add your templates to this array.
@@ -77,8 +80,49 @@ class TR_Deprecated_Templates {
 	}
 
 	/**
+	 * Adds an admin notification about deprecated templates
+	 */
+	public function add_template_deprecated_notification() {
+		global $post;
+
+		$deprecated_template_in_use = false;
+
+		if ( isset( $post ) && get_post_type($post->ID) == 'page' ) {
+			$pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true );
+			if ( !empty( $pagetemplate ) ) {
+				switch ( $pagetemplate ) {
+					case 'page-contact.php':
+						$deprecated_template_in_use = true;
+						break;
+					case 'page-with-slider-full-width.php':
+						$deprecated_template_in_use = true;
+						break;
+					case 'page-with-slider.php':
+						$deprecated_template_in_use = true;
+						break;
+					default:
+						break;
+				}
+			}
+		}
+
+		if( $deprecated_template_in_use ) {
+			?>
+			<div class="notice-warning settings-error notice">
+				<p>
+					<strong>
+						<span>This page template is deprecated, you can still use it with the Mr. Tailor Deprecated Features plugin enabled, but it’s recommended to switch to a different page template.</span>
+					</strong>
+				</p>
+			</div>
+			<?php
+		}
+
+		return;
+	}
+
+	/**
 	 * Adds our template to the page dropdown for v4.7+
-	 *
 	 */
 	public function add_new_template( $posts_templates ) {
 		$posts_templates = array_merge( $posts_templates, $this->templates );
@@ -90,12 +134,12 @@ class TR_Deprecated_Templates {
 		// Create the key used for the themes cache
 		$cache_key = 'page_templates-' . md5( get_theme_root() . '/' . get_stylesheet() );
 
-		// Retrieve the cache list. 
+		// Retrieve the cache list.
 		// If it doesn't exist, or it's empty prepare an array
 		$templates = wp_get_theme()->get_page_templates();
 		if ( empty( $templates ) ) {
 			$templates = array();
-		} 
+		}
 
 		// New cache, therefore remove the old one
 		wp_cache_delete( $cache_key , 'themes');
@@ -115,7 +159,7 @@ class TR_Deprecated_Templates {
 	 * Checks if the template is assigned to the page
 	 */
 	public function view_project_template( $template ) {
-		
+
 		// Get global post
 		global $post;
 
@@ -125,13 +169,13 @@ class TR_Deprecated_Templates {
 		}
 
 		// Return default template if we don't have a custom one defined
-		if ( !isset( $this->templates[get_post_meta( 
-			$post->ID, '_wp_page_template', true 
+		if ( !isset( $this->templates[get_post_meta(
+			$post->ID, '_wp_page_template', true
 		)] ) ) {
 			return $template;
-		} 
+		}
 
-		$file = plugin_dir_path(__FILE__). get_post_meta( 
+		$file = plugin_dir_path(__FILE__). get_post_meta(
 			$post->ID, '_wp_page_template', true
 		);
 
