@@ -1,8 +1,8 @@
 === Mr. Tailor Deprecated Features ===
 Contributors: getbowtied, vanesareinerth, adrianlbs
 Requires at least: 5.0
-Tested up to: 5.4.2
-Stable tag: 1.1.3
+Tested up to: 5.5
+Stable tag: 1.1.4
 Requires PHP: 5.5.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -15,6 +15,9 @@ Templates:
 - Contact Page
 
 == Changelog ==
+
+= 1.1.4 =
+- WordPress 5.5 compatibility updates
 
 = 1.1.3 =
 - Fixed: Page with Slider template width issue
