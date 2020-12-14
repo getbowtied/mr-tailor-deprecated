@@ -76,13 +76,13 @@ jQuery(document).ready(function($) {
 
 	var slider_2 = new Swiper('.main-slider .swiper-container', {
 		loop: true,
-		pagination: { el: '.pagination', clickable: true, },
+		pagination: { el: '.main-slider .swiper-container .pagination', clickable: true, },
 		autoHeight: true,
 		resistance: true,
 		resistanceRatio: 1,
 		navigation: {
-			nextEl: $(this).find('.arrow-right'),
-			prevEl: $(this).find('.arrow-left'),
+			nextEl: '.main-slider .swiper-container .arrow-right',
+			prevEl: '.main-slider .swiper-container .arrow-left',
 		},
 		<?php if ($slider_metabox->get_the_value('slider_autoplay') == 1) { ?>
 		autoplay: { delay: <?php echo esc_attr($slider_metabox->get_the_value('slider_autoplay_delay')) == "" ? 5000 : $slider_metabox->get_the_value('slider_autoplay_delay'); ?> },
