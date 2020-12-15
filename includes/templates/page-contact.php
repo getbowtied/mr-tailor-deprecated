@@ -18,21 +18,21 @@ Template Name: Contact Page
     var map;
     var myLatlng;
     var myOptions;
-    
+
     function initialize() {
-        
+
 		<?php
-		
+
 		$map_style_id = "default";
-		
+
 		if ($map_metabox->get_the_value('style') != "") {
 			$map_style_id = $map_metabox->get_the_value('style');
 		}
-		
+
 		include_once dirname(__FILE__) . '/map/' . $map_style_id . '.php';
-		
+
 		?>
-        
+
 		myLatlng = new google.maps.LatLng(<?php echo esc_html($map_metabox->the_value('lat')) ?>, <?php echo esc_html($map_metabox->the_value('long')) ?>);
         myOptions = {
             zoom: <?php echo esc_attr($map_metabox->the_value('zoom')) ?>,
@@ -42,7 +42,7 @@ Template Name: Contact Page
             draggable: true,
 			panControl: false,
 			mapTypeControl: false,
-            disableDoubleClickZoom: false,      
+            disableDoubleClickZoom: false,
             zoomControl: true,
             zoomControlOptions: {
                 style: google.maps.ZoomControlStyle.LARGE,
@@ -60,12 +60,12 @@ Template Name: Contact Page
         var styledMapType = new google.maps.StyledMapType(styles['<?php echo esc_html($map_style_id); ?>'], {name: '<?php echo esc_html($map_style_id); ?>'});
         map.mapTypes.set('<?php echo esc_html($map_style_id); ?>', styledMapType);
         map.setMapTypeId('<?php echo esc_html($map_style_id); ?>');
-        
+
 		var markerImage = {
 			url: '<?php echo dirname(__FILE__); ?>/images/pinpoint.png',
 			scaledSize: new google.maps.Size(50, 60)
 		},
-		
+
 		markerOptions = {
 			map: map,
 			position: myLatlng,
@@ -74,15 +74,15 @@ Template Name: Contact Page
 			draggable: false,
 			optimized: false
 		},
-		
+
 		marker = new google.maps.Marker(markerOptions);
     }
-        
+
     google.maps.event.addDomListener(window, 'load', initialize);
     if (jQuery(window).innerWidth() > 1024) {
 		google.maps.event.addDomListener(window, 'resize', initialize);
 	}
-	
+
 	google.maps.event.addDomListener(window, 'scroll', function(){
 		var scrollY=jQuery(window).scrollTop(),
 		scrollX=jQuery(window).scrollLeft(),
@@ -92,37 +92,38 @@ Template Name: Contact Page
       	}
       	map.set('scroll',{x:scrollX,y:scrollY})
 	});
-	
-	jQuery(document).ready(function($) {
-	"use strict";
-	
+
+	jQuery( function($) {
+
+        "use strict";
+
 		if ($(window).innerWidth() < 640) {
 			$('#map_canvas').css('height','180px');
 		} else {
 			$('#map_canvas').css('height','<?php echo esc_html($map_metabox->the_value('height')) ?>px');
 		}
-		
-		$(window).resize(function(){
-	
+
+		$(window).on( 'resize', function(){
+
 			if ($(window).innerWidth() < 640) {
 				$('#map_canvas').css('height','180px');
 			} else {
 				$('#map_canvas').css('height','<?php echo esc_html($map_metabox->the_value('height')) ?>px');
 			}
-			
+
 		});
-		
+
 	});
-    
+
     </script>
-    
+
     <div id="map_container">
         <div id="map_canvas" style="height:<?php echo esc_html($map_metabox->the_value('height')) ?>px;"></div>
     </div>
 
 
 	<div id="primary" class="content-area page-contact">
-       
+
         <div id="content" class="site-content" role="main">
 
             <?php while ( have_posts() ) : the_post(); ?>
@@ -130,17 +131,17 @@ Template Name: Contact Page
                 <div class="row">
                     <div class="large-12 large-centered columns">
                         <?php get_template_part( 'content', 'page' ); ?>
-   
+
                         <div class="clearfix"></div>
                         <footer class="entry-meta"></footer>
-                        
+
                     </div>
                 </div>
 
             <?php endwhile; // end of the loop. ?>
 
-        </div><!-- #content -->           
-        
+        </div><!-- #content -->
+
     </div><!-- #primary -->
-    
+
 <?php get_footer(); ?>

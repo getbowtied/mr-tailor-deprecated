@@ -51,7 +51,7 @@
 </div>
 
 <script>
-jQuery(document).ready(function($) {
+jQuery( function($) {
 
 	function resize_slider_content() {
 			$('.main-slider, .main-slider .swiper-container, .main-slider .swiper-container .main-slider-content, .main-slider .swiper-container .swiper-wrapper').css('height', $(window).innerHeight() - $('.normal_header .site-header').innerHeight() - $('#wpadminbar').innerHeight());
@@ -98,7 +98,7 @@ jQuery(document).ready(function($) {
 		slider_2.slideNext();
 	});
 
-	$(window).resize(function(){
+	$(window).on( 'resize', function(){
 		$('.main-slider .arrow-left, .main-slider .arrow-right').removeClass('hidden');
 		$('.main-slider-elements').addClass('animated');
 		setTimeout(function() {

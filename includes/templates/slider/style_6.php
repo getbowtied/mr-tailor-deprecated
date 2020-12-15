@@ -44,18 +44,13 @@
 </ul>
 
 <script>
-jQuery(document).ready(function($) {
+jQuery( function($) {
 
 	function resize_slider_content() {
-		//if ($(window).innerWidth() > 640) {
-			$('.main-slider .main-slider-content').css('height', $(window).innerHeight());
-			$('.main-slider').css('visibility', 'visible');
-			// $('.slide_1 .main-slider-elements').addClass('animated');
-		//}
+		$('.main-slider .main-slider-content').css('height', $(window).innerHeight());
+		$('.main-slider').css('visibility', 'visible');
 	}
 
 	resize_slider_content();
-
-
 });
 </script>

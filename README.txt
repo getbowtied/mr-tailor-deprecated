@@ -2,7 +2,7 @@
 Contributors: getbowtied, vanesareinerth, adrianlbs
 Requires at least: 5.0
 Tested up to: 5.6
-Stable tag: 1.1.5
+Stable tag: 1.1.6
 Requires PHP: 5.5.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -15,6 +15,9 @@ Templates:
 - Contact Page
 
 == Changelog ==
+
+= 1.1.6 =
+- Maintenance: Fixed a few jQuery deprecated features warnings
 
 = 1.1.5 =
 - WordPress 5.6 compatibility updates

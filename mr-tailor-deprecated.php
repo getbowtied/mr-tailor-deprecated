@@ -4,7 +4,7 @@
  * Plugin Name:       		Mr. Tailor Deprecated Features
  * Plugin URI:        		https://mrtailor.wp-theme.design/
  * Description:       		Old features of Mr. Tailor theme that are no longer used.
- * Version:           		1.1.5
+ * Version:           		1.1.6
  * Author:            		GetBowtied
  * Author URI:				https://getbowtied.com
  * Text Domain:				mr-tailor-deprecated

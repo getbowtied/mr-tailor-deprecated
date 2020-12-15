@@ -66,7 +66,7 @@
 </div>
 
 <script>
-jQuery(document).ready(function($) {
+jQuery( function($) {
 
 	var slider_2 = new Swiper('.main-slider .swiper-container', {
 		loop: true,
