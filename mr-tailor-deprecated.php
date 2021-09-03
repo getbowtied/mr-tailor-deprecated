@@ -4,13 +4,13 @@
  * Plugin Name:       		Mr. Tailor Deprecated Features
  * Plugin URI:        		https://mrtailor.wp-theme.design/
  * Description:       		Old features of Mr. Tailor theme that are no longer used.
- * Version:           		1.1.6
+ * Version:           		1.1.7
  * Author:            		GetBowtied
  * Author URI:				https://getbowtied.com
  * Text Domain:				mr-tailor-deprecated
  * Domain Path:				/languages/
  * Requires at least: 		5.0
- * Tested up to: 			5.6
+ * Tested up to: 			5.8
  *
  * @package  Mr. Tailor Deprecated
  * @author   GetBowtied
